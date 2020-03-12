@@ -89,6 +89,15 @@ class Xhgui_Db_Mapper
                 '$options' => 'i',
             );
         }
+        
+        if (isset($search['domain'])) {
+            // Not sure if letting people use regex here
+            // is a good idea. Only one way to find out.
+            $conditions['meta.SERVER.HTTP_HOST'] = array(
+                '$regex' => (string)$search['domain'],
+                '$options' => 'i',
+            );
+        }
 
         return $conditions;
     }

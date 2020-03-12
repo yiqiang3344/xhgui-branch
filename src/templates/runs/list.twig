@@ -23,7 +23,13 @@
             </div>
         </div>
         <div class="control-group span4">
-            <label class="control-label" for="url">请求地址</label>
+            <label class="control-label" for="domain">域名</label>
+            <div class="controls">
+                <input type="text" id="domain" name="domain" value="{{ search.domain }}">
+            </div>
+        </div>
+        <div class="control-group span4">
+            <label class="control-label" for="url">方法</label>
             <div class="controls">
                 <input type="text" id="url" name="url" value="{{ search.url }}">
                 <input type="hidden" name="sort" value="{{ paging.sort }}">

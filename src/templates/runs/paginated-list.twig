@@ -57,7 +57,7 @@
               </a>
             </td>
             <td>
-                {% set addr = result.meta.url %}
+                {% set addr = [result.meta('SERVER.HTTP_HOST'), result.meta.url] | join('') %}
                 {{ helpers.tip_link(
                     addr,
                     50,

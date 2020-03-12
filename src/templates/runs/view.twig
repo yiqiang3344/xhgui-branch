@@ -11,7 +11,7 @@
     <div class="sidebar-nav" style="height:840px;overflow: auto;">
         <ul class="nav nav-list">
             <li class="nav-header">这次运行</li>
-            <li><strong>请求地址</strong> <a href="{{ url('url.view', {'url': result.meta('url')|simple_url }) }}">{{ result.meta('url') }}</a></li>
+            <li><strong>请求地址</strong> <a href="{{ url('url.view', {'url': result.meta('url')|simple_url }) }}">{{ [result.meta('SERVER.HTTP_HOST'), result.meta.url] | join('') }}</a></li>
             <li><strong>时间</strong> {{ result.date|date(date_format) }}</li>
             <li><strong>ID</strong> <a href="{{ url('custom.help', {id: result.id|trim }) }}">{{ result.id }}</a></li>
             <li><strong>执行时间</strong> {{ result.get('main()', 'wt')|as_time }}</li>
